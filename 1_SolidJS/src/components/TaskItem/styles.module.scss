@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+
+  > * {
+    cursor: pointer;
+  }
+
+  label {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    input {}
+
+    span {
+      margin-left: 0.5rem;
+
+      &.checked {
+        font-style: italic;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0 0 1px 1px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color .4s, box-shadow 0.4s;
+
+    &:hover {
+      background-color: #fff;
+      box-shadow: 1px 1px 3px #d5d5d5;
+    }
+  }
+}
