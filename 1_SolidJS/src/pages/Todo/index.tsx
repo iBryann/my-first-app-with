@@ -2,33 +2,15 @@ import {
   For,
   Show,
   createEffect,
-  createMemo,
   createSignal
 } from 'solid-js';
 
 import styles from './styles.module.scss';
 import { TaskType, CustomFormType } from './types';
 import { TaskItem } from '../../components/TaskItem';
+import { DEFAULT_TASKS } from '../../@data';
 
-const DEFAULT_TASKS: TaskType[] = [
-  {
-    id: '1',
-    checked: false,
-    description: 'My task 1'
-  },
-  {
-    id: '2',
-    checked: true,
-    description: 'My task 2'
-  },
-  {
-    id: '3',
-    checked: false,
-    description: 'My task 3'
-  },
-];
-
-export const Todo = () => {
+export default () => {
   const [tasks, setTasks] = createSignal<TaskType[]>(DEFAULT_TASKS, { equals: false });
   const checkedTasks = () => tasks().filter(task => task.checked);
   const uncheckedTasks = () => tasks().filter(task => !task.checked);
@@ -98,4 +80,4 @@ export const Todo = () => {
       </ul>
     </div>
   );
-}
+};

@@ -7,8 +7,8 @@ interface Props {
   remove: (id: string) => void;
 }
 
-export const TaskItem = ({ task, remove, update }: Props) => {
-  const { id, checked, description } = task;
+export const TaskItem = (props: Props) => {
+  const { id, checked, description } = props.task;
 
   return (
     <li class={styles.container}>
@@ -16,7 +16,7 @@ export const TaskItem = ({ task, remove, update }: Props) => {
         <input
           type='checkbox'
           checked={checked}
-          onClick={() => update(id)}
+          onClick={() => props.update(id)}
         />
 
         <span classList={{ [styles.checked]: checked }}>
@@ -24,7 +24,7 @@ export const TaskItem = ({ task, remove, update }: Props) => {
         </span>
       </label>
 
-      <button type='button' onClick={() => remove(id)}>❌</button>
+      <button type='button' onClick={() => props.remove(id)}>❌</button>
     </li>
   );
-}
+};

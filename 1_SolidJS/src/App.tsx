@@ -1,7 +1,10 @@
-import { Todo } from './pages/Todo';
+import { Header } from './components';
+import { AppRouter } from './routes';
 
 export const App = () => {
   return (
-    <Todo />
+    <AppRouter>
+      <Header />
+    </AppRouter>
   );
 };
